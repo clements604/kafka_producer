@@ -13,6 +13,7 @@ use rdkafka::message::OwnedHeaders;
 use rdkafka::producer::{FutureProducer, FutureRecord};
 use serde::Deserialize;
 
+#[cfg(test)]
 mod main_test;
 
 static DEFAULT_SETTINGS_FILE: &str = "settings.json";

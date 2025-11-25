@@ -133,8 +133,6 @@ fn main() -> anyhow::Result<()> {
         }
     }
 
-    let ssl_enabled = settings.ssl_enabled;
-
     debug!("Bootstrap servers: {}", bootstrap_servers);
     debug!("Topic: {}", topic);
     debug!("Group: {}", group);
@@ -147,7 +145,7 @@ fn main() -> anyhow::Result<()> {
         client_config.set("retries", "0");
         client_config.set("socket.keepalive.enable", "true");
 
-    if ssl_enabled {
+    if settings.ssl_enabled {
         debug!("SSL enabled, setting client config values");
         let ssl_protocol: String = settings.ssl_protocol.clone();
         match ssl_protocol.as_str() {

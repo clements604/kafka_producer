@@ -203,7 +203,15 @@ fn main() -> anyhow::Result<()> {
 /*
  * Read body to send to Kafka topic.
  * This body can be provided via stdin, or from file.
-*/
+ *
+ * Params:
+ * - args_body: Option<String> - The file path provided via command-line argument (if any).
+ * - settings_body: String - The default file path from the settings file.
+ *
+ * Returns:
+ * - Ok(String): The message body as a string.
+ * - Err(io::Error): If reading from stdin or file fails.
+ */
 fn read_body(args_body: Option<String>, settings_body: String) -> io::Result<String> {
     if !atty::is(Stream::Stdin) {
         let mut buf = String::new();
@@ -212,6 +220,14 @@ fn read_body(args_body: Option<String>, settings_body: String) -> io::Result<Str
     }
 
     // Not stdin, try getting file from args, otherwise default to body file defined in settings
-    let body_file = args_body.unwrap_or(settings_body);
-    fs::read_to_string(body_file)
+    let body_file = args_body.unwrap_or(settings_body.clone());
+    match fs::read_to_string(body_file) {
+        Ok(body_file) => {
+            Ok(body_file)
+        },
+        Err(e) => {
+            error!("Error reading message body file - {} - {}", settings_body, e);
+            Err(e)
+        }
+    }
 }

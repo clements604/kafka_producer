@@ -1,12 +1,5 @@
-
-
-# TODO
-- README updates
-- Cargo.toml updates
-
-# WIP
-
-# Development resources
+# kafka_producer
+A basic Kafka producer to aid in development activities written in Rust.
 
 ## Local Kafka
 ### Confluent documentation
@@ -30,4 +23,4 @@ docker compose up -d # Start local cluster
 docker compose down # Delete local cluster
 ```
 ### Local cluster link
-http://localhost:9021/clusters/MkU3OEVBNTcwNTJENDM2Qk/management/topics/test-topic/message-viewer
+http://localhost:9021/clusters/

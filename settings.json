@@ -1,0 +1,19 @@
+{
+    "bootstrap_servers": "localhost:9092",
+    "topic": "test-topic",
+    "group": "test-group",
+    "broker_timeout_milis": "10000",
+    "headers": "header1:value1,header2:value2",
+    "key": "test key 1",
+    "body_file": "test_message.txt",
+    "logging_level": "DEBUG",
+    "ssl_enabled": false,
+    "ssl_protocol": "ssl",
+    "ssl_ca_file": "",
+    "ssl_client_cert_file": "",
+    "ssl_private_key_location": "",
+    "ssl_key_password": "",
+    "sasl_mechanisms": "SCRAM-SHA-512",
+    "sasl_username": "",
+    "sasl_password": ""
+}

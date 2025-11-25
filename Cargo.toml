@@ -1,0 +1,16 @@
+
+[package]
+name = "kafka_producer"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+rdkafka = { version = "0.38.0", features = ["ssl"] }
+clap = { version = "4.5.53", features = ["derive"] }
+config = { version = "0.15.19", features = ["json"] }
+serde = { version = "1.0.228", features = ["derive"] }
+futures = "0.3"
+log = "0.4.28"
+env_logger = "0.11.8"
+atty = "0.2.14"
+anyhow = "1.0.100"

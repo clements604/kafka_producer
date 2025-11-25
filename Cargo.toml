@@ -3,7 +3,7 @@
 name = "kafka_producer"
 version = "1.0.0"
 edition = "2024"
-authors = ["Joshua Clements <yclements604@gmail.com"]
+authors = ["Joshua Clements <clements604@gmail.com"]
 description = "A basic Kafka producer to aid in development activities written in Rust."
 license = "MIT"
 repository = "https://github.com/clements604/kafka_producer"
